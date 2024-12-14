@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Notes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f4f6;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            font-size: 1.5rem;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1rem;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        nav a {
+            text-decoration: none;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .content {
+            padding: 2rem;
+        }
+        .grade-section {
+            display: none;
+        }
+        .grade-section.active {
+            display: block;
+        }
+        .notes-list {
+            margin-top: 1rem;
+        }
+        .notes-list li {
+            margin: 0.5rem 0;
+        }
+        .upload-section {
+            margin-top: 2rem;
+        }
+        .btn {
+            padding: 0.5rem 1rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Welcome to the Class Notes Portal
+    </header>
+    <nav>
+        <a href="#" data-grade="grade-9">Grade 9</a>
+        <a href="#" data-grade="grade-10">Grade 10</a>
+        <a href="#" data-grade="grade-11">Grade 11</a>
+        <a href="#" data-grade="grade-12">Grade 12</a>
+    </nav>
+    <div class="content">
+        <div id="grade-9" class="grade-section">
+            <h2>Grade 9 Notes</h2>
+            <ul class="notes-list">
+                <li><a href="#" download>Math Notes</a></li>
+                <li><a href="#" download>Science Notes</a></li>
+            </ul>
+            <div class="upload-section">
+                <h3>Upload Notes</h3>
+                <input type="file" id="upload-9" accept=".pdf">
+                <button class="btn">Upload</button>
+            </div>
+        </div>
+        <div id="grade-10" class="grade-section">
+            <h2>Grade 10 Notes</h2>
+            <ul class="notes-list">
+                <li><a href="#" download>History Notes</a></li>
+                <li><a href="#" download>Geography Notes</a></li>
+            </ul>
+            <div class="upload-section">
+                <h3>Upload Notes</h3>
+                <input type="file" id="upload-10" accept=".pdf">
+                <button class="btn">Upload</button>
+            </div>
+        </div>
+        <div id="grade-11" class="grade-section">
+            <h2>Grade 11 Notes</h2>
+            <ul class="notes-list">
+                <li><a href="#" download>Physics Notes</a></li>
+                <li><a href="#" download>Chemistry Notes</a></li>
+            </ul>
+            <div class="upload-section">
+                <h3>Upload Notes</h3>
+                <input type="file" id="upload-11" accept=".pdf">
+                <button class="btn">Upload</button>
+            </div>
+        </div>
+        <div id="grade-12" class="grade-section">
+            <h2>Grade 12 Notes</h2>
+            <ul class="notes-list">
+                <li><a href="#" download>Biology Notes</a></li>
+                <li><a href="#" download>English Notes</a></li>
+            </ul>
+            <div class="upload-section">
+                <h3>Upload Notes</h3>
+                <input type="file" id="upload-12" accept=".pdf">
+                <button class="btn">Upload</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+                const grade = this.getAttribute('data-grade');
+                document.querySelectorAll('.grade-section').forEach(section => {
+                    section.classList.remove('active');
+                });
+                document.getElementById(grade).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
