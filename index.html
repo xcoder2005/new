@@ -1,75 +1,92 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Class Notes</title>
+    <title>Class Notes Viewer</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f3f4f6;
+            background-color: #eef2f3;
             color: #333;
         }
         header {
-            background-color: #4CAF50;
+            background-color: #007bff;
             color: white;
             text-align: center;
-            padding: 1rem;
-            font-size: 1.5rem;
+            padding: 1.5rem 0;
+            font-size: 2rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
         nav {
             display: flex;
             justify-content: center;
-            gap: 1rem;
-            padding: 1rem;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            gap: 2rem;
+            padding: 1rem 0;
+            background-color: #ffffff;
+            border-bottom: 1px solid #ddd;
         }
         nav a {
             text-decoration: none;
-            color: #4CAF50;
+            color: #007bff;
+            font-size: 1.2rem;
             font-weight: bold;
+            transition: color 0.3s;
         }
         nav a:hover {
-            text-decoration: underline;
+            color: #0056b3;
         }
         .content {
             padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         .grade-section {
             display: none;
+            width: 100%;
+            max-width: 800px;
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
         }
         .grade-section.active {
             display: block;
         }
         .notes-list {
-            margin-top: 1rem;
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
         }
         .notes-list li {
-            margin: 0.5rem 0;
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
         }
-        .upload-section {
-            margin-top: 2rem;
+        .notes-list li img {
+            width: 32px;
+            height: 32px;
+            margin-right: 1rem;
         }
-        .btn {
-            padding: 0.5rem 1rem;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+        .notes-list li a {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: color 0.3s;
         }
-        .btn:hover {
-            background-color: #45a049;
+        .notes-list li a:hover {
+            color: #0056b3;
         }
     </style>
 </head>
 <body>
     <header>
-        Welcome to the Class Notes Portal
+        Class Notes Viewer
     </header>
     <nav>
         <a href="#" data-grade="grade-9">Grade 9</a>
@@ -81,50 +98,54 @@
         <div id="grade-9" class="grade-section">
             <h2>Grade 9 Notes</h2>
             <ul class="notes-list">
-                <li><a href="#" download>Math Notes</a></li>
-                <li><a href="#" download>Science Notes</a></li>
+                <li>
+                    <img src="https://img.icons8.com/color/48/000000/pdf-2.png" alt="PDF Icon">
+                    <a href="#" target="_blank">Math Notes</a>
+                </li>
+                <li>
+                    <img src="https://img.icons8.com/color/48/000000/pdf-2.png" alt="PDF Icon">
+                    <a href="#" target="_blank">Science Notes</a>
+                </li>
             </ul>
-            <div class="upload-section">
-                <h3>Upload Notes</h3>
-                <input type="file" id="upload-9" accept=".pdf">
-                <button class="btn">Upload</button>
-            </div>
         </div>
         <div id="grade-10" class="grade-section">
             <h2>Grade 10 Notes</h2>
             <ul class="notes-list">
-                <li><a href="#" download>History Notes</a></li>
-                <li><a href="#" download>Geography Notes</a></li>
+                <li>
+                    <img src="https://img.icons8.com/color/48/000000/pdf-2.png" alt="PDF Icon">
+                    <a href="#" target="_blank">History Notes</a>
+                </li>
+                <li>
+                    <img src="https://img.icons8.com/color/48/000000/pdf-2.png" alt="PDF Icon">
+                    <a href="#" target="_blank">Geography Notes</a>
+                </li>
             </ul>
-            <div class="upload-section">
-                <h3>Upload Notes</h3>
-                <input type="file" id="upload-10" accept=".pdf">
-                <button class="btn">Upload</button>
-            </div>
         </div>
         <div id="grade-11" class="grade-section">
             <h2>Grade 11 Notes</h2>
             <ul class="notes-list">
-                <li><a href="#" download>Physics Notes</a></li>
-                <li><a href="#" download>Chemistry Notes</a></li>
+                <li>
+                    <img src="https://img.icons8.com/color/48/000000/pdf-2.png" alt="PDF Icon">
+                    <a href="#" target="_blank">Physics Notes</a>
+                </li>
+                <li>
+                    <img src="https://img.icons8.com/color/48/000000/pdf-2.png" alt="PDF Icon">
+                    <a href="#" target="_blank">Chemistry Notes</a>
+                </li>
             </ul>
-            <div class="upload-section">
-                <h3>Upload Notes</h3>
-                <input type="file" id="upload-11" accept=".pdf">
-                <button class="btn">Upload</button>
-            </div>
         </div>
         <div id="grade-12" class="grade-section">
             <h2>Grade 12 Notes</h2>
             <ul class="notes-list">
-                <li><a href="#" download>Biology Notes</a></li>
-                <li><a href="#" download>English Notes</a></li>
+                <li>
+                    <img src="https://img.icons8.com/color/48/000000/pdf-2.png" alt="PDF Icon">
+                    <a href="#" target="_blank">Biology Notes</a>
+                </li>
+                <li>
+                    <img src="https://img.icons8.com/color/48/000000/pdf-2.png" alt="PDF Icon">
+                    <a href="#" target="_blank">English Notes</a>
+                </li>
             </ul>
-            <div class="upload-section">
-                <h3>Upload Notes</h3>
-                <input type="file" id="upload-12" accept=".pdf">
-                <button class="btn">Upload</button>
-            </div>
         </div>
     </div>
     <script>
